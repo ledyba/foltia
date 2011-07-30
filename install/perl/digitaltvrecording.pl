@@ -73,8 +73,14 @@ if (($bandtype eq "" )|| ($recch eq "")|| ($lengthsec eq "")){
 	exit;
 }
 
+#HDD¤òµ¯¤³¤¹
+my $hdd_sleep_time = time();
+&writelog("digitaltvrecording: DEBUG WAKEUPHDD");
+&writelog(`$toolpath/perl/wakeuphdd.pl`);
+$hdd_sleep_time = time() - $hdd_sleep_time + 1;
+
 my $intval = $recch % 10; # 0¡Á9 sec
-my $startupsleep = $startupsleeptime - $intval; #  18¡Á27 sec
+my $startupsleep = $startupsleeptime - $intval - $hdd_sleep_time; #  18¡Á27 sec
 $reclengthsec = $lengthsec + (60 - $startupsleep) + 1; #
 
 if ( $sleeptype ne "N"){

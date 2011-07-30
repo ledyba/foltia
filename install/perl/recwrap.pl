@@ -13,7 +13,7 @@
 #
 
 use DBI;
-use DBD::Pg;
+#use DBD::Pg;
 use DBD::SQLite;
 use Schedule::At;
 use Time::Local;
@@ -207,12 +207,14 @@ $sth->execute($outputfilename);
 &writelog("recwrap DEBUG UPDATEDB $stmt{'recwrap.2'}");
 
 # Starlight breaker向けキャプチャ画像作成
-if (-e "$toolpath/perl/captureimagemaker.pl"){
-	&writelog("recwrap Call captureimagemaker $outputfilename");
-&changefilestatus($pid,$FILESTATUSCAPTURE);
-	system ("$toolpath/perl/captureimagemaker.pl $outputfilename");
-&changefilestatus($pid,$FILESTATUSCAPEND);
-}
+
+#if (-e "$toolpath/perl/captureimagemaker.pl"){
+#	&writelog("recwrap Call captureimagemaker $outputfilename");
+#&changefilestatus($pid,$FILESTATUSCAPTURE);
+#	system ("$toolpath/perl/captureimagemaker.pl $outputfilename");
+#&changefilestatus($pid,$FILESTATUSCAPEND);
+#}
+
 }#非ラジオ局
 
 # MPEG4 ------------------------------------------------------
@@ -221,9 +223,9 @@ $sth = $dbh->prepare($stmt{'recwrap.3'});
 $sth->execute($tid);
  @psptrcn= $sth->fetchrow_array;
 if ($psptrcn[0]  == 1 ){#トラコン番組
-	&writelog("recwrap Launch ipodtranscode.pl");
-	exec ("$toolpath/perl/ipodtranscode.pl");
-	exit;
+#	&writelog("recwrap Launch ipodtranscode.pl");
+#	exec ("$toolpath/perl/ipodtranscode.pl");
+#	exit;
 }#PSPトラコンあり
 
 sub continuousrecordingcheck(){

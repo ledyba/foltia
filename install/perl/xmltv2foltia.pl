@@ -23,7 +23,7 @@ use Jcode;
 #use Data::Dumper; 
 use Time::Local;
 use DBI;
-use DBD::Pg;
+#use DBD::Pg;
 use DBD::SQLite;
 
 $path = $0;

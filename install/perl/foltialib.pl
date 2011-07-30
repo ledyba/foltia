@@ -11,7 +11,7 @@ require "foltia_conf1.pl";
 
 #  foltia lib
 use DBI;
-use DBD::Pg;
+#use DBD::Pg;
 use DBD::SQLite;
 use POSIX qw(strftime);
 

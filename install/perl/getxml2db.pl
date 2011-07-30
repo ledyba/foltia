@@ -17,7 +17,7 @@ use LWP::Simple;
 use Jcode;
 use Time::Local;
 use DBI;
-use DBD::Pg;
+#use DBD::Pg;
 use DBD::SQLite;
 use Digest::MD5 qw(md5_hex);
 

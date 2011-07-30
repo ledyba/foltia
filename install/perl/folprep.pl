@@ -15,7 +15,7 @@
 #
 #
 use DBI;
-use DBD::Pg;
+#use DBD::Pg;
 use Schedule::At;
 use Time::Local;
 

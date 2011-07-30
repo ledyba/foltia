@@ -24,7 +24,7 @@
 #
 
 use DBI;
-use DBD::Pg;
+#use DBD::Pg;
 use DBD::SQLite;
 
 $path = $0;

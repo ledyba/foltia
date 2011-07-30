@@ -26,7 +26,7 @@
 
 
 use DBI;
-use DBD::Pg;
+#use DBD::Pg;
 use DBD::SQLite;
 use Schedule::At;
 use Time::Local;
